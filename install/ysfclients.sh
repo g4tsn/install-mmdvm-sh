@@ -9,7 +9,7 @@ N_CPU=$5
 	git clone https://github.com/g4klx/YSFClients.git /home/pi/MMDVM/YSFClients
 	cd /home/pi/MMDVM/YSFClients/YSFGateway/
 	sudo make clean
-	echo 'Compilazione  YSFGateway...'
+	echo 'Compile  YSFGateway...'
 	if [ $N_CPU = "0" ]; then
 		make
 	else
