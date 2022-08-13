@@ -8,7 +8,7 @@ N_CPU=$5
 	git clone https://github.com/g4klx/DMRGateway.git /home/pi/MMDVM/DMRGateway
 	cd /home/pi/MMDVM/DMRGateway/
 	make clean
-	echo 'Compilazione  DMRGateway...'
+	echo 'Compile  DMRGateway...'
 	if [ $N_CPU = "0" ]; then
 		make
 	else
