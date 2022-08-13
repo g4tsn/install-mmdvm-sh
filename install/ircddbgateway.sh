@@ -7,7 +7,7 @@ PATH_EXEC=$4
 N_CPU=$5
 
 	git clone https://github.com/g4klx/ircDDBGateway.git /home/pi/MMDVM/ircDDBGateway
-	echo 'Compilazione  IRCDDBGateway...'
+	echo 'Compile  IRCDDBGateway...'
 	cd /home/pi/MMDVM/ircDDBGateway/
         make clean
 	sed -i "s%/var/log%${LOG_PATH_IRCDDBGATEWAY}%g" /home/pi/MMDVM/ircDDBGateway/Makefile
