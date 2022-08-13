@@ -3,7 +3,7 @@
 PATH_FILEEXECBUTTON=$1
 FILE_NAME=$2
 
-	echo 'installazione di buttonoff....'
+	echo 'install  button off....'
 
 	echo 'Creazione file python'
 
