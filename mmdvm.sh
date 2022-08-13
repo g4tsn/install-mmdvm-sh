@@ -58,31 +58,31 @@ apt-get install git build-essential libwxgtk3.0-dev portaudio19-dev libusb-1.0-0
 apt-get autoremove
 
 
-echo 'Vuoi installare MMDVMHost? (y/n)'
+echo 'install MMDVMHost? (y/n)'
 read VAR
 if [ $VAR = "y" ]; then
 	sh ${PATH_RUN_SCRIPT}/install/mmdvmhost.sh ${PATH_RUN_SCRIPT} ${LOG_PATH_MMDVMHOST} ${CONFIG_PATH_MMDVMHOST} ${PATH_EXEC} ${N_CPU}
 fi
 
-echo 'Vuoi installare DMRGateway? (y/n)'
+echo 'install DMRGateway? (y/n)'
 read VAR
 if [ $VAR = "y" ]; then
 	sh ${PATH_RUN_SCRIPT}/install/dmrgateway.sh ${PATH_RUN_SCRIPT} ${LOG_PATH_DMRGATEWAY} ${CONFIG_PATH_DMRGATEWAY} ${PATH_EXEC} ${N_CPU}
 fi
 
-echo 'Vuoi installare YSFClients? (y/n)'
+echo 'install YSFClients? (y/n)'
 read VAR
 if [ $VAR = "y" ]; then
 	sh ${PATH_RUN_SCRIPT}/install/ysfclients.sh ${PATH_RUN_SCRIPT} ${LOG_PATH_YSFGATEWAY} ${CONFIG_PATH_YSFGATEWAY} ${PATH_EXEC} ${N_CPU}
 fi
 
-echo 'Vuoi installare ircDDBGateway? (y/n)'
+echo 'install ircDDBGateway? (y/n)'
 read VAR
 if [ $VAR = "y" ]; then
 	sh ${PATH_RUN_SCRIPT}/install/ircddbgateway.sh ${PATH_RUN_SCRIPT} ${LOG_PATH_IRCDDBGATEWAY} ${CONFIG_PATH_IRCDDBGATEWAY} ${PATH_EXEC} ${N_CPU}
 fi
 
-echo 'Vuoi installare i servizi bot telegram? (y/n)'
+echo 'install  service bot telegram? (y/n)'
 read VAR
 if [ $VAR = "y" ]; then
 	sh ${PATH_RUN_SCRIPT}/install/telegrambot.sh ${PATH_RUN_SCRIPT}
@@ -90,19 +90,19 @@ fi
 
 cp -R ${PATH_RUN_SCRIPT}/script /home/pi/
 
-echo 'Vuoi installare dashboard? (y/n)'
+echo 'install dashboard? (y/n)'
 read VAR
 if [ $VAR = "y" ]; then
 	sh ${PATH_RUN_SCRIPT}/install/dashboard.sh
 fi
 
-echo 'Vuoi installare buttonoff? (y/n)'
+echo 'install buttonoff? (y/n)'
 read VAR
 if [ $VAR = "y" ]; then
 	sh ${PATH_RUN_SCRIPT}/install/buttonoff.sh ${PATH_FILEEXECBUTTON} ${FILE_NAME}
 fi
 
-echo 'Vuoi installare OpenVPN? (y/n)'
+echo 'install OpenVPN? (y/n)'
 read VAR
 if [ $VAR = "y" ]; then
 	sh ${PATH_RUN_SCRIPT}/install/openvpn.sh
