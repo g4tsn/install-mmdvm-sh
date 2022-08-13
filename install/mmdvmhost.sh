@@ -8,7 +8,7 @@ N_CPU=$5
 
 	git clone https://github.com/g4klx/MMDVMHost.git /home/pi/MMDVM/MMDVMHost
     sleep 2
-    echo 'Vuoi installare la versione di MMDVMHost con Display HD44780? (y/n)'
+    echo '******Do you want to add direct HD44780 display ? (y/n)'
 	read VAR
 	if [ $VAR = "y" ]; then
 		echo 'Installazione di Wiring Pi....'
@@ -29,11 +29,11 @@ N_CPU=$5
 			make -f Makefile.Pi.HD44780 -j$N_CPU all
 		fi 
 	else
-		echo 'Compilazione e installazione di MMDVMHost senza Display HD44780....'
+		echo 'Compile normal displays with installazione of MMDVMHost Display HD44780....'
 		cd /home/pi/MMDVM/MMDVMHost/
 	
 		make clean
-		echo 'Compilazione MMDVMHost...'
+		echo 'Compile MMDVMHost...'
 		if [ $N_CPU = "0" ]; then
 			make 
 		else
