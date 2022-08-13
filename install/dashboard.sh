@@ -1,6 +1,6 @@
 #!/bin/sh
 
-	echo 'installazione dashboard....'
+	echo 'install dashboard....'
 
 	git clone https://github.com/dg9vh/MMDVMHost-Dashboard.git /var/www/html/MMDVMHost-Dashboard
 
