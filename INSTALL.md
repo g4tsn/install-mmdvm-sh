@@ -6,6 +6,7 @@ Download the package from the terminal using the command:
 
 	
         git clone https://github.com/g4tsn/install-mmdvm-sh.git ./install-mmdvm-sh
+	
 	cd install-mmdvm-sh
 
 	Launch the script using the command
