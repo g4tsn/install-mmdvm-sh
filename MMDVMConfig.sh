@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # GENERAL SETTING
-CALLSIGN="IZ1MLT"
-DMR_ID="2221119"
-RPT_OR_HS="1" # 1 for duplex mode repeater, 0 for simplex mode Hot Spot
+CALLSIGN="GB7IN"
+DMR_ID="235???"
+RPT_OR_HS="0" # 1 for duplex mode repeater, 0 for simplex mode Hot Spot
 FREQ_TX="430.437500"
-FREQ_RX="435.437500"
+FREQ_RX="439.437500"
 LAT="44.554375"
 LONG="8.938647"
 HEIGHT="15"
-LOCATION="Genova"
-DESCRIPTION="mmdvm system"
+LOCATION="UK"
+DESCRIPTION="FreeDMR mmdvm system"
 URL="www.google.it"
 CW_ID="1" #1 active 0 disable
 PORT_MODEM="/dev/ttyACM0"
@@ -18,7 +18,7 @@ TX_INV="1"
 RX_INV="0"
 
 # DSTAR
-DS_EN="1"
+DS_EN="0"
 MODULE="B"
 IRC_EN="0"
 QUADNET_EN="0"
@@ -52,19 +52,19 @@ XLX_EN="0"
 XLX_TG="6"
 XLX_TS="1"
 XLX_STARTUP="999"
-BM_EN="1"
-BM_IP="bm2222@dmrbrescia.it"
+FreeDMR_EN="1"
+FreeDMR_IP="87.117.229.39"
 DMRP_EN="0"
 DMRP_IP="93.186.255.126"
 
 # YSF C4FM
-YSF_EN="1"
-FCS_EN="1"
+YSF_EN="0"
+FCS_EN="0"
 YSFFCS_START="IT C4FM Piemonte"
 YSF_TXHANG="1"
 
 # APRS
-APRS_EN="1"
+APRS_EN="0"
 APRS_HOST="italy1.aprs2.net"
 APRS_PORT="14580"
 APRS_PWD=$(curl http://n5dux.com/ham/aprs-passcode/?callsign=$CALLSIGN | grep -e "size=24>" | cut -f 5 -d">" | cut -f1 -d"<")
@@ -84,7 +84,7 @@ TGN="on"				   # Enable TG-Names
 # ------------------------
 # YSFGateway-Configuration
 # ------------------------
-YSFGat="on"				   # Enable YSFGateway
+YSFGat="off"				   # Enable YSFGateway
 YSFlog="YSFGateway"			   # Logfile-prefix
 YSFini="YSFGateway.ini"		   # YSFGateway.ini-filename
 YSFHos="YSFHotst.txt"			   # YSFHosts.txt-filename
@@ -249,7 +249,7 @@ if [ $DMR_EN = "1" ]; then
 	printf "\n\n[Voice]\nEnabled=1\nLanguage=it_IT\nDirectory=${CONFIG_PATH_DMRGATEWAY}Audio" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
 	printf "\n\n[Info]\nRXFrequency=${FREQ_RX:0:3}${FREQ_RX:4}\nTXFrequency=${FREQ_TX:0:3}${FREQ_TX:4}\nPower=10\nLatitude=${LAT}\nLongitude=${LONG}\nHeight=${HEIGHT}\nLocation=${LOCATION}\nDescription=${DESCRIPTION}\nURL=${URL}" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
 	printf "\n\n[XLX Network]\nEnabled=${XLX_EN}\nFile=XLXHosts.txt\nPort=62030\nPassword=passw0rd\nReloadTime=60\n# Local=3351\nSlot=${XLX_TS}\nTG=${XLX_TG}\nBase=64000\nStartup=999\nRelink=10\nDebug=0" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
-	printf "\n\n# BrandMeister\n[DMR Network 1]\nEnabled=${BM_EN}\nName=BM\nAddress=${BM_IP}\nPort=62031\n# Local=3352\nPassAllPC=1\nPassAllPC=2\nPassAllTG=1\nPassAllTG=2\nPassword=passow0rd\nLocation=1\nDebug=0" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
+	printf "\n\n# FreeDMR\n[DMR Network 1]\nEnabled=${FreeDMR_EN}\nName=FreeDMR\nAddress=${FreeDMR_IP}\nPort=62031\n# Local=3352\nPassAllPC=1\nPassAllPC=2\nPassAllTG=1\nPassAllTG=2\nPassword=passow0rd\nLocation=1\nDebug=0" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
 	printf "\n\n# DMR+\n[DMR Network 2]\nEnabled=${DMRP_EN}\nName=DMR+\nAddress=${DMRP_IP}\nPort=55555\n# Local=3352\nPassAllPC=1\nPassAllPC=2\nPassAllTG=1\nPassAllTG=2\nPassword=PASSWORD\nLocation=0\nDebug=0" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
 	printf "\n\n# Local HBLink network\n[DMR Network 3]\nEnabled=0\nName=HBLink\nAddress=44.131.4.2\nPort=55555\n# Local=3352\n# Local area TG on to slot 2 TG11\nTGRewrite=2,11,2,11,1\nPassword=PASSWORD\nLocation=0\nDebug=0" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
 
