@@ -32,7 +32,7 @@ N_CPU=$5
 	else
 		echo 'Compile normal displays with installazione of MMDVMHost Display HD44780....'
 		cd /home/pi/MMDVM/MMDVMHost/
-	
+		git reset --hard 3313fe8ec3528f107172855a240a8d7839e881cf
 		make clean
 		echo 'Compile MMDVMHost...'
 		if [ $N_CPU = "0" ]; then
