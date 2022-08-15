@@ -7,8 +7,9 @@ N_CPU=$5
 
 	git clone https://github.com/g4klx/DMRGateway.git /home/pi/MMDVM/DMRGateway
 sleep 2
-        git reset --hard 6e89e4922f8c5eb7ec3797729a82137d70bc8940
+        
 	cd /home/pi/MMDVM/DMRGateway/
+	git reset --hard 6e89e4922f8c5eb7ec3797729a82137d70bc8940
 	make clean
 	echo 'Compile  DMRGateway...'
 	if [ $N_CPU = "0" ]; then
