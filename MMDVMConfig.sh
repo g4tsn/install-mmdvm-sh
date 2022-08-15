@@ -4,8 +4,8 @@
 CALLSIGN="GB7IN"
 DMR_ID="235???"
 RPT_OR_HS="0" # 1 for duplex mode repeater, 0 for simplex mode Hot Spot
-FREQ_TX="430.437500"
-FREQ_RX="439.437500"
+FREQ_TX="439.487500"
+FREQ_RX="430.487500"
 LAT="44.554375"
 LONG="8.938647"
 HEIGHT="15"
