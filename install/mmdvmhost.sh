@@ -8,12 +8,7 @@ N_CPU=$5
 
 	git clone https://github.com/g4klx/MMDVMHost.git /home/pi/MMDVM/MMDVMHost
     sleep 2
-        cd /home/pi/MMDVM/MMDVMHost
-    sleep 2	
-        git reset --hard 3313fe8ec3528f107172855a240a8d7839e881cf
-	cd /opt/install-mmdvm-sh
-    sleep 2	
-    	
+            	
     echo '******Do you want to add direct HD44780 display ? (y/n)'
 	read VAR
 	if [ $VAR = "y" ]; then
@@ -26,7 +21,7 @@ N_CPU=$5
 		echo 'Compilazione e installazione di MMDVMHost con Display HD44780....'
 		sleep 2
 		cd /home/pi/MMDVM/MMDVMHost/
-
+                git reset --hard 3313fe8ec3528f107172855a240a8d7839e881cf
 		make clean
 		echo 'Compilazione di MMDVMHost....'
 		if [ $N_CPU = "0" ]; then
