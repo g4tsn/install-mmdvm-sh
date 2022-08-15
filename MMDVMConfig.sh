@@ -13,7 +13,7 @@ LOCATION="UK"
 DESCRIPTION="FreeDMR mmdvm system"
 URL="www.google.it"
 CW_ID="0" #1 active 0 disable
-PORT_MODEM="/dev/ttyACM0"
+PORT_MODEM="/dev/ttyAMA0"
 TX_INV="1"
 RX_INV="0"
 
