@@ -8,6 +8,7 @@ N_CPU=$5
 
 	git clone https://github.com/g4klx/MMDVMHost.git /home/pi/MMDVM/MMDVMHost
     sleep 2
+        git reset --hard 3313fe8ec3528f107172855a240a8d7839e881cf
     echo '******Do you want to add direct HD44780 display ? (y/n)'
 	read VAR
 	if [ $VAR = "y" ]; then
