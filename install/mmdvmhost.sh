@@ -11,6 +11,9 @@ N_CPU=$5
         cd /home/pi/MMDVM/MMDVMHost
     sleep 2	
         git reset --hard 3313fe8ec3528f107172855a240a8d7839e881cf
+	cd /opt/install-mmdvm-sh
+    sleep 2	
+    	
     echo '******Do you want to add direct HD44780 display ? (y/n)'
 	read VAR
 	if [ $VAR = "y" ]; then
