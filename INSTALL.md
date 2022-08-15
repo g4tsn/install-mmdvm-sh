@@ -2,7 +2,7 @@
 # INSTALL MMDVM Raspberry PI on Raspbian 10 (Buster)        
 
 
-Download the package from the terminal using the command:  
+Download the package from the terminal using the command:  if you are root user forget the sudo 
 
 	cd /opt
         
@@ -13,19 +13,40 @@ Download the package from the terminal using the command:
 	Launch the script using the command
 	
 	sudo sh mmdvm.sh
+	
+	you will have several options to install or not answer y/n
+	
+	the first option is for direct attached display always choose n for this option library missing 
+	
+	for dmr only installation choose y for mmdvmhost dmrgateway and dashboard 
 
 	wait for the installation to end ....
 	
-Config .ini file
-	
-	Make sure you are always in the same direcory and open the file using the command
-	
-	sudo nano MMDVMConfig.sh
+Config  This script allows you to final edit config files 
 	
 	
-	Once saved, run the script
+	Make sure you are always in the same direcory /opt/install-mmdvm-sh/ and open the file using the command
+	
+	sudo nano MMDVMConfig.sh    
+	
+	you can do this over and over to check config and edit anything you need but be sure to run the script once you edit something 
+	
+	check your config files look ok and change your callsign DMR id etc 
+	
+	once you check to the end Ctrl X will prompt you to save changes you made and open the next section  
+	
+	again check for any changes you want to make scroll to the end Ctrl X will prompt to save and the next section will open 
+	
+	if you have not configured a section because you did not install for example YSF  CTRL X at the end will take you straight to the next section
+		
+	
+	Once saved all sections,  run the script
 	
 	sudo bash MMDVMConfig.sh
+	
+	Make sure you run above after any edit to copy the changes into place 
+	
+	This copies all the config files into their correct place in /etc/mmdvmhost/MMDVM.ini     for example
 
 Uninstall by command
 
