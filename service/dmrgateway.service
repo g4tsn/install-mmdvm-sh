@@ -8,8 +8,9 @@ Restart=always
 RestartSec=10
 StandardOutput=null
 WorkingDirectory=/usr/local/bin
-ExecStart=/usr/local/bin/DMRGateway /etc/dmrgateway/DMRGateway.ini
+ExecStart=/usr/bin/screen -S DMRGateway -D -m /usr/local/bin/DMRGateway /etc/dmrgateway/DMRGateway.ini
 ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/usr/bin/screen -S DMRGateway -X quit
 KillMode=process
 
 [Install]
