@@ -9,7 +9,7 @@ N_CPU=$5
 sleep 2
         
 	cd /home/pi/MMDVM/DMRGateway/
-	git reset --hard 6e89e4922f8c5eb7ec3797729a82137d70bc8940
+	git reset --hard 03bcdbc7cc807678f7a9fee98e801924651e91a8
 	make clean
 	echo 'Compile  DMRGateway...'
 	if [ $N_CPU = "0" ]; then
