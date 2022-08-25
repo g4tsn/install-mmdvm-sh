@@ -6,12 +6,12 @@ After=network-online.target netcheck.service
 Type=simple
 Restart=always
 RestartSec=10
-StandardOutput=null
+#StandardOutput=null
 WorkingDirectory=/usr/local/bin
 ExecStart=/usr/bin/screen -S DMRGateway -D -m /usr/local/bin/DMRGateway /etc/dmrgateway/DMRGateway.ini
-ExecReload=/bin/kill -HUP $MAINPID
+#ExecReload=/bin/kill -HUP $MAINPID
 ExecStop=/usr/bin/screen -S DMRGateway -X quit
-KillMode=process
+#KillMode=process
 
 [Install]
 # To make the network-online.target available
