@@ -86,7 +86,7 @@ TGN="on"				   # Enable TG-Names
 # ------------------------
 YSFGat="off"				   # Enable YSFGateway
 YSFlog="YSFGateway"			   # Logfile-prefix
-YSFini="YSFGateway.ini"		   # YSFGateway.ini-filename
+YSFini="YSFGateway.ini"		           # YSFGateway.ini-filename
 YSFHos="YSFHotst.txt"			   # YSFHosts.txt-filename
 
 # ------------------------
@@ -94,12 +94,12 @@ YSFHos="YSFHotst.txt"			   # YSFHosts.txt-filename
 # ------------------------
 DMRGat="on"				   # Enable DMRGateway
 DMRlog="DMRGateway"			   # Logfile-prefix
-DMRini="DMRGateway.ini"		   # DMRGateway.ini-filename
+DMRini="DMRGateway.ini"		           # DMRGateway.ini-filename
 
 # ---------------------------
 # ircddbgateway-Configuration
 # ---------------------------
-ircDDB="ircddbgatewayd"		# Name of ircddbgateway-executeable
+ircDDB="ircddbgatewayd"		           # Name of ircddbgateway-executeable
 
 # --------------------
 # Global Configuration
@@ -127,7 +127,7 @@ DMRRSF="on"				   # Enable Reflector-Switching-Function (DMR)
 YSFRSF="on"				   # Enable Reflector-Switching-Function (YSF)
 UseSN=""				   # Username for switching networks
 PasSN=""				   # Password for switching networks
-MF="on"				   # Enable Management-Functions below
+MF="on"				           # Enable Management-Functions below
 UseVL=""				   # Username for view log
 PasVL=""				   # Password for view log	
 UseHa=""				   # Username for halt
@@ -247,15 +247,12 @@ if [ $DMR_EN = "1" ]; then
 	rm ${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
 
 	printf "[General]\nTimeout=10\n# RFTimeout=10\n# NetTimeout=7\nRptAddress=127.0.0.1\nRptPort=62032\nLocalAddress=127.0.0.1\nLocalPort=62031\nRuleTrace=0\nDaemon=0\nDebug=0" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
-	printf "\n\n[Log]\n# Logging levels, 0=No logging\nDisplayLevel=1\nFileLevel=2\nFilePath=${LOG_PATH_DMRGATEWAY}\nFileRoot=DMRGateway" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
-	printf "\n\n[Voice]\nEnabled=1\nLanguage=it_IT\nDirectory=${CONFIG_PATH_DMRGATEWAY}Audio" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
+        printf "\n\n[Log]\n# Logging levels, 0=No logging\nDisplayLevel=1\nFileLevel=2\nFilePath=${LOG_PATH_DMRGATEWAY}\nFileRoot=DMRGateway" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
+	printf "\n\n[Voice]\nEnabled=1\nLanguage=en_GB\nDirectory=${CONFIG_PATH_DMRGATEWAY}Audio" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
 	printf "\n\n[Info]\nRXFrequency=${FREQ_RX:0:3}${FREQ_RX:4}\nTXFrequency=${FREQ_TX:0:3}${FREQ_TX:4}\nPower=10\nLatitude=${LAT}\nLongitude=${LONG}\nHeight=${HEIGHT}\nLocation=${LOCATION}\nDescription=${DESCRIPTION}\nURL=${URL}" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
-	printf "\n\n[XLX Network]\nEnabled=${XLX_EN}\nFile=XLXHosts.txt\nPort=62030\nPassword=passw0rd\nReloadTime=60\n# Local=3351\nSlot=${XLX_TS}\nTG=${XLX_TG}\nBase=64000\nStartup=999\nRelink=10\nDebug=0" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
-	printf '\n\n# FreeDMR\n[DMR Network 1]\nEnabled=${FreeDMR_EN}\nName=FreeDMR\nAddress=${FreeDMR_IP}\nPort=62031\nTypeRewrite=2,80,2,80,9909\nTypeRewrite=2,9991,2,9991,16767223\nTGRewrite=2,9,2,9,1\nTGRewrite=2,9991,2,9991,1\nTGRewrite=1,9991,1,9991,1\nPassAllPC=1\nPassAllPC=2\nPassword=passw0rd\nLocation=1\nDebug=0\nOptions="TS1=0;DIAL=2350;TIMER=15;VOICE=1;"' >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
-	printf "\n\n# DMR+\n[DMR Network 2]\nEnabled=${DMRP_EN}\nName=DMR+\nAddress=${DMRP_IP}\nPort=55555\n# Local=3352\nPassAllPC=1\nPassAllPC=2\nPassAllTG=1\nPassAllTG=2\nPassword=PASSWORD\nLocation=0\nDebug=0" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
-	printf "\n\n# Local HBLink network\n[DMR Network 3]\nEnabled=0\nName=HBLink\nAddress=44.131.4.2\nPort=55555\n# Local=3352\n# Local area TG on to slot 2 TG11\nTGRewrite=2,11,2,11,1\nPassword=PASSWORD\nLocation=0\nDebug=0" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
-
-	nano ${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
+	printf "\n\n[XLX Network]\nEnabled=${XLX_EN}\nFile=XLXHosts.txt\nPort=62030\nPassword=passw0rd\nReloadTime=60\n# Local=3351\nSlot=${XLX_TS}\nTG=${XLX_TG}\nBase=64000\nStartup=999\nRelink=10\nDebug=0\nUserControl=1" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
+	printf '\n\n# FreeDMR\n[DMR Network 1]\nEnabled=${FreeDMR_EN}\nName=FreeDMR\nAddress=${FreeDMR_IP}\nPort=62031\nTypeRewrite=2,80,2,80,9909\nTypeRewrite=2,9991,2,9991,16767223\nTGRewrite=2,9991,2,9991,1\nTGRewrite=1,9991,1,9991,1\nPassAllPC=1\nPassAllPC=2\nPassword=passw0rd\nLocation=1\nDebug=0\nOptions="TS1=0;DIAL=2350;TIMER=15;VOICE=1;"' >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
+nano ${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
 fi
 
 # IRCDDBGATEWAY
