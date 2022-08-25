@@ -21,7 +21,7 @@ N_CPU=$5
 		echo 'Compilazione e installazione di MMDVMHost con Display HD44780....'
 		sleep 2
 		cd /home/pi/MMDVM/MMDVMHost/
-                git reset --hard 3313fe8ec3528f107172855a240a8d7839e881cf
+                git reset --hard 9106fd69d2722e47bf2ecc5f91671364a8c68e48
 		make clean
 		echo 'Compilazione di MMDVMHost....'
 		if [ $N_CPU = "0" ]; then
