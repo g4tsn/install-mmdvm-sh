@@ -202,7 +202,7 @@ SHIFT=$((${FREQ_RX:0:3}${FREQ_RX:4} - ${FREQ_TX:0:3}${FREQ_TX:4}))
 	printf "\n\n[CW Id]\nEnable=1\nTime=10\n# Callsign=" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[DMR Id Lookup]\nFile=${LOG_PATH_MMDVMHOST}DMRIds.dat\nTime=24" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[NXDN Id Lookup]\nFile=${LOG_PATH_MMDVMHOST}NXDN.csv\nTime=24" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
-	printf "\n\n[Modem]\nPort=${PORT_MODEM}\nProtocol=uart\n# Address=0x22\nTXInvert=${TX_INV}\nRXInvert=${RX_INV}\nPTTInvert=0\nTXDelay=100\nRXOffset=0\nTXOffset=0\nDMRDelay=0\nRXLevel=50\nTXLevel=50\nRXDCOffset=0\nTXDCOffset=0\nRFLevel=100\n# CWIdTXLevel=50\n# D-StarTXLevel=50\n# DMRTXLevel=50\n# YSFTXLevel=50\n# P25TXLevel=50\n# NXDNTXLevel=50\n# POCSAGTXLevel=50\nRSSIMappingFile=RSSI.dat\nTrace=0\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
+	printf "\n\n[Modem]\nPort=${PORT_MODEM}\nProtocol=uart\n# Address=0x22\nTXInvert=${TX_INV}\nRXInvert=${RX_INV}\nPTTInvert=0\nTXDelay=100\nRXOffset=0\nTXOffset=0\nDMRDelay=0\nRXLevel=50\nTXLevel=50\nRXDCOffset=0\nTXDCOffset=0\nRFLevel=100\n# CWIdTXLevel=50\n# D-StarTXLevel=50\n# DMRTXLevel=50\n# YSFTXLevel=50\n# P25TXLevel=50\n# NXDNTXLevel=50\n# POCSAGTXLevel=50\n# FMTXLevel=50\nRSSIMappingFile=RSSI.dat\nUseCOSAsLockout=0\nTrace=0\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[Transparent Data]\nEnable=0\nRemoteAddress=127.0.0.1\nRemotePort=40094\nLocalPort=40095\n# SendFrameType=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[UMP]\nEnable=0\n# Port=\\.\COM4\n# Port=/dev/ttyACM1" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[D-Star]\nEnable=${DS_EN}\nModule=${MODULE}\nSelfOnly=0\nAckReply=1\nAckTime=750\nAckMessage=0\nErrorReply=1\nRemoteGateway=0\n# ModeHang=10" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
@@ -211,8 +211,9 @@ SHIFT=$((${FREQ_RX:0:3}${FREQ_RX:4} - ${FREQ_TX:0:3}${FREQ_TX:4}))
 	printf "\n\n[P25]\nEnable=0\nNAC=293\nSelfOnly=0\nOverrideUIDCheck=0\nRemoteGateway=0\n# ModeHang=10" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[NXDN]\nEnable=0\nRAN=1\nSelfOnly=0\nRemoteGateway=0\n# ModeHang=10" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[POCSAG]\nEnable=0\nFrequency=439987500" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
-	printf "\n\n[D-Star Network]\nEnable=1\nGatewayAddress=127.0.0.1\nGatewayPort=20010\nLocalPort=20011\n# ModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
-	printf "\n\n[DMR Network]\nEnable=${DMR_EN}\nAddress=127.0.0.1\nPort=62031\nJitter=360\nLocal=62032\nPassword=PASSWORD\n# Options=\nSlot1=1\nSlot2=1\n# ModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
+        printf "\n\n[FM]\nEnable=0\n#Callsign=G4TSN\nExtAudioBoost=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
+        printf "\n\n[D-Star Network]\nEnable=1\nGatewayAddress=127.0.0.1\nGatewayPort=20010\nLocalPort=20011\n# ModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
+	printf "\n\n[DMR Network]\nEnable=${DMR_EN}\nType=Gateway\nAddress=127.0.0.1\nPort=62031\nJitter=360\nLocal=62032\nPassword=PASSWORD\n# Options=\nSlot1=1\nSlot2=1\n# ModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[System Fusion Network]\nEnable=1\nLocalAddress=127.0.0.1\nLocalPort=3200\nGatewayAddress=127.0.0.1\nGatewayPort=4200\n# ModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[P25 Network]\nEnable=0\nGatewayAddress=127.0.0.1\nGatewayPort=42020\nLocalPort=32010\n# ModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[NXDN Network]\nEnable=0\nLocalAddress=127.0.0.1\nLocalPort=14021\nGatewayAddress=127.0.0.1\nGatewayPort=14020\n# ModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
@@ -223,6 +224,7 @@ SHIFT=$((${FREQ_RX:0:3}${FREQ_RX:4} - ${FREQ_TX:0:3}${FREQ_TX:4}))
 	printf "\n\n[OLED]\nType=3\nBrightness=0\nInvert=0\nScroll=1\nRotate=0\nCast=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[LCDproc]\nAddress=localhost\nPort=13666\n#LocalPort=13667\nDimOnIdle=0\nDisplayClock=1\nUTC=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
         printf "\n\n[Lock File]\nEnable=0\nFile=/tmp/MMDVM_Active.lck" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
+        printf "\n\n[Remote Control]\nEnable=0\nAddress=127.0.0.1/nPort=7642" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	nano ${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 
 # YSFGATEWEAY
