@@ -6,11 +6,12 @@ After=network-online.target netcheck.service
 Type=simple
 Restart=always
 RestartSec=10
-StandardOutput=null
+#StandardOutput=null
 WorkingDirectory=/usr/local/bin
-ExecStart=/usr/local/bin/MMDVMHost /etc/mmdvmhost/MMDVM.ini
-ExecReload=/bin/kill -HUP $MAINPID
-KillMode=process
+ExecStart=/usr/bin/screen -S MMDVMHost -D -m /usr/local/bin/MMDVMHost /etc/mmdvmhost/MMDVM.ini
+#ExecReload=/bin/kill -HUP $MAINPID
+#KillMode=process
+ExecStop=/usr/bin/screen -S MMDVMHost -X quit
 
 [Install]
 # To make the network-online.target available
