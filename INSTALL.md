@@ -117,12 +117,16 @@ IrcDDBGateway
 	sudo systemctl disable <nome_servizio>.timer
 
 # Connect to Screen Output of a service to see what is happening 
+   
    sudo screen -r MMDVMHost
- Ctrl a then d to disconnect from screen and keep the service running
+   
+   Ctrl a then d to disconnect from screen and keep the service running
 
 # Connect to Screen Output of a service to see what is happening 
+   
    sudo screen -r DMRGateway
- Ctrl a then d to disconnect from screen and keep the service running
+ 
+   Ctrl a then d to disconnect from screen and keep the service running
 
 
 # Starting shell programs
