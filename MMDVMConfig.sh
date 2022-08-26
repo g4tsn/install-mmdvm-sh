@@ -53,7 +53,7 @@ XLX_TG="6"
 XLX_TS="1"
 XLX_STARTUP="999"
 FreeDMR_EN="1"
-FreeDMR_IP="87.117.229.39"
+FreeDMR_IP="hotspot.uk.freedmr.link"
 DMRP_EN="0"
 DMRP_IP="93.186.255.126"
 
@@ -251,7 +251,7 @@ if [ $DMR_EN = "1" ]; then
 	printf "\n\n[Voice]\nEnabled=1\nLanguage=en_GB\nDirectory=${CONFIG_PATH_DMRGATEWAY}Audio" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
 	printf "\n\n[Info]\nRXFrequency=${FREQ_RX:0:3}${FREQ_RX:4}\nTXFrequency=${FREQ_TX:0:3}${FREQ_TX:4}\nPower=10\nLatitude=${LAT}\nLongitude=${LONG}\nHeight=${HEIGHT}\nLocation=${LOCATION}\nDescription=${DESCRIPTION}\nURL=${URL}" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
 	printf "\n\n[XLX Network]\nEnabled=${XLX_EN}\nFile=XLXHosts.txt\nPort=62030\nPassword=passw0rd\nReloadTime=60\n# Local=3351\nSlot=${XLX_TS}\nTG=${XLX_TG}\nBase=64000\nStartup=999\nRelink=10\nDebug=0\nUserControl=1" >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
-	printf '\n\n# FreeDMR\n[DMR Network 1]\nEnabled=${FreeDMR_EN}\nName=FreeDMR\nAddress=${FreeDMR_IP}\nPort=62031\nPCRewrite=2,80,2,80,9909\nPCRewrite=2,9991,2,9991,16767223\nTGRewrite=2,9990,2,9990,1\nTGRewrite=1,9990,1,9990,1\nTGRewrite=1,9,1,23590,1\nTGRewrite2,9,2,9,1\nPassAllPC=1\nPassAllPC=2\nPassword=passw0rd\nLocation=1\nDebug=0\nOptions="TS1=23590;DIAL=2350;TIMER=15;VOICE=1;"' >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
+	printf '\n\n# FreeDMR\n[DMR Network 1]\nEnabled=${FreeDMR_EN}\nName=FreeDMR\nAddress=${FreeDMR_IP}\nPort=62031\nPCRewrite=2,80,2,80,9909\nPCRewrite=2,9991,2,9991,16767223\nTGRewrite=2,9990,2,9990,1\nTGRewrite=1,9990,1,9990,1\nTGRewrite=1,9,1,23590,1\nTGRewrite=2,9,2,9,1\nPassAllPC=1\nPassAllPC=2\nPassword=passw0rd\nLocation=1\nDebug=0\nOptions="DIAL=2350;TIMER=15;VOICE=1;"' >>${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
         
 	nano ${CONFIG_PATH_DMRGATEWAY}DMRGateway.ini
 fi
