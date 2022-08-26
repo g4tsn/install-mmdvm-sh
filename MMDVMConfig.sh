@@ -11,7 +11,7 @@ LONG="8.938647"
 HEIGHT="15"
 LOCATION="UK"
 DESCRIPTION="FreeDMR mmdvm system"
-URL="www.google.it"
+URL="www.google.com"
 CW_ID="0" #1 active 0 disable
 PORT_MODEM="/dev/ttyAMA0"
 TX_INV="1"
@@ -30,7 +30,7 @@ REF_MODULE="K"
 REMOTE_EN="0"
 REMOTE_PWD="password"
 REMOTE_PORT="10022"
-LANGUAGE="Italiano"
+LANGUAGE="English(UK)"
 #language list
 #                0   English(UK)
 #                1   Deutsch
@@ -105,7 +105,7 @@ ircDDB="ircddbgatewayd"		           # Name of ircddbgateway-executeable
 # Global Configuration
 # --------------------
 PathEx="/usr/local/bin/"	           # Path to executable files
-TZ="Europe/Rome"			   # Timezone
+TZ="Europe/London"			   # Timezone
 LOC="en_GB"				   # Locale
 URLlogo=""				   # URL to Logo
 NETphp="on"				   # Use networks.php instead of configuration below
@@ -202,7 +202,7 @@ SHIFT=$((${FREQ_RX:0:3}${FREQ_RX:4} - ${FREQ_TX:0:3}${FREQ_TX:4}))
 	printf "\n\n[CW Id]\nEnable=1\nTime=10\n# Callsign=" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[DMR Id Lookup]\nFile=${LOG_PATH_MMDVMHOST}DMRIds.dat\nTime=24" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[NXDN Id Lookup]\nFile=${LOG_PATH_MMDVMHOST}NXDN.csv\nTime=24" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
-	printf "\n\n[Modem]\nPort=${PORT_MODEM}\nProtocol=uart\n# Address=0x22\nTXInvert=${TX_INV}\nRXInvert=${RX_INV}\nPTTInvert=0\nTXDelay=100\nRXOffset=0\nTXOffset=0\nDMRDelay=0\nRXLevel=50\nTXLevel=50\nRXDCOffset=0\nTXDCOffset=0\nRFLevel=100\n# CWIdTXLevel=50\n# D-StarTXLevel=50\n# DMRTXLevel=50\n# YSFTXLevel=50\n# P25TXLevel=50\n# NXDNTXLevel=50\n# POCSAGTXLevel=50\n# FMTXLevel=50\nRSSIMappingFile=RSSI.dat\nUseCOSAsLockout=0\nTrace=0\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
+	printf "\n\n[Modem]\nPort=${PORT_MODEM}\n#Port=dev/ttyACM0\nProtocol=uart\n# Address=0x22\nTXInvert=${TX_INV}\nRXInvert=${RX_INV}\nPTTInvert=0\nTXDelay=100\nRXOffset=0\nTXOffset=0\nDMRDelay=0\nRXLevel=50\nTXLevel=50\nRXDCOffset=0\nTXDCOffset=0\nRFLevel=100\n# CWIdTXLevel=50\n# D-StarTXLevel=50\n# DMRTXLevel=50\n# YSFTXLevel=50\n# P25TXLevel=50\n# NXDNTXLevel=50\n# POCSAGTXLevel=50\n# FMTXLevel=50\nRSSIMappingFile=RSSI.dat\nUseCOSAsLockout=0\nTrace=0\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[Transparent Data]\nEnable=0\nRemoteAddress=127.0.0.1\nRemotePort=40094\nLocalPort=40095\n# SendFrameType=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[UMP]\nEnable=0\n# Port=\\.\COM4\n# Port=/dev/ttyACM1" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[D-Star]\nEnable=${DS_EN}\nModule=${MODULE}\nSelfOnly=0\nAckReply=1\nAckTime=750\nAckMessage=0\nErrorReply=1\nRemoteGateway=0\n# ModeHang=10" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
@@ -236,7 +236,7 @@ if [ $YSF_EN = "1" ] || [ $FCS_EN = "1" ]; then
 	printf "\n\n[Log]\n# Logging levels, 0=No logging\nDisplayLevel=1\nFileLevel=2\nFilePath=${LOG_PATH_YSFGATEWAY}\nFileRoot=YSFGateway" >>${CONFIG_PATH_YSFGATEWAY}YSFGateway.ini
 	printf "\n\n[aprs.fi]\nEnable=${APRS_EN}\nServer=${APRS_HOST}\nPort=${APRS_PORT}\nPassword=${APRS_PWD}\nDescription=${DESCRIPTION}\nSuffix=Y" >>${CONFIG_PATH_YSFGATEWAY}YSFGateway.ini
 	printf "\n\n[Network]\n${YSF_AUTOSTART}Startup=${YSFFCS_START}\nInactivityTimeout=0\nRevert=0\nDebug=0" >>${CONFIG_PATH_YSFGATEWAY}YSFGateway.ini
-	printf "\n\n[YSF Network]\nEnable=1\nPort=42000\nHosts=${LOG_PATH_YSFGATEWAY}YSFHosts.txt\nReloadTime=60\nParrotAddress=127.0.0.1\nParrotPort=42012\nYSF2DMRAddress=127.0.0.1\nYSF2DMRPort=42013\nYSF2NXDNAddress=127.0.0.1\nYSF2NXDNPort=42014\nYSF2P25Address=127.0.0.1\nYSF2P25Port=42015" >>${CONFIG_PATH_YSFGATEWAY}YSFGateway.ini
+	printf "\n\n[YSF Network]\nEnable=0\nPort=42000\nHosts=${LOG_PATH_YSFGATEWAY}YSFHosts.txt\nReloadTime=60\nParrotAddress=127.0.0.1\nParrotPort=42012\nYSF2DMRAddress=127.0.0.1\nYSF2DMRPort=42013\nYSF2NXDNAddress=127.0.0.1\nYSF2NXDNPort=42014\nYSF2P25Address=127.0.0.1\nYSF2P25Port=42015" >>${CONFIG_PATH_YSFGATEWAY}YSFGateway.ini
 	printf "\n\n[FCS Network]\nEnable=${FCS_EN}\nRooms=${LOG_PATH_YSFGATEWAY}FCSRooms.txt\nPort=42001" >>${CONFIG_PATH_YSFGATEWAY}YSFGateway.ini
 
 	nano ${CONFIG_PATH_YSFGATEWAY}YSFGateway.ini
