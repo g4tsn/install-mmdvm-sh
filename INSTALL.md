@@ -16,7 +16,7 @@ Download the package from the terminal using the command:  if you are root user 
 
 	Launch the script using the command
 	
-	sudo sh mmdvm.sh
+	sh mmdvm.sh
 	
 	you will have several options to install or not answer y/n
 	
@@ -31,7 +31,7 @@ Config  This script allows you to final edit config files
 	
 	Make sure you are always in the same direcory /opt/install-mmdvm-sh/ and open the file using the command
 	
-	sudo nano MMDVMConfig.sh    
+	nano MMDVMConfig.sh    
 	
 	you can do this over and over to check config and edit anything you need but be sure to run the script once you edit something 
 	
@@ -46,110 +46,112 @@ Config  This script allows you to final edit config files
 	
 	Once saved all sections,  run the script
 	
-	sudo bash MMDVMConfig.sh
+	bash MMDVMConfig.sh
 	
 	Make sure you run above after any edit to copy the changes into place 
 	
 	This copies all the config files into their correct place in /etc/mmdvmhost/MMDVM.ini     for example
 
+
+
 Uninstall by command
 
-	sudo mmdvm_uninstall.sh
+	mmdvm_uninstall.sh
 
 # Start commands by servicing
 
 MMDVMHost
 
-	sudo service mmdvmhost start
+	service mmdvmhost start
 	
-	sudo service mmdvmhost stop
+	service mmdvmhost stop
 	
-	sudo service mmdvmhost restart
+	service mmdvmhost restart
 	
-	sudo service mmdvmhost status
+	service mmdvmhost status
 	
 DMRGateway
 
-	sudo service dmrgateway start
+	service dmrgateway start
 	
-	sudo service dmrgateway stop
+	service dmrgateway stop
 	
-	sudo service dmrgateway restart
+	service dmrgateway restart
 	
-	sudo service dmrgateway status
+	service dmrgateway status
 
 
 YSFGateway
 
-	sudo service ysfgateway start
+	service ysfgateway start
 	
-	sudo service ysfgateway stop
+	service ysfgateway stop
 	
-	sudo service ysfgateway restart
+	service ysfgateway restart
 	
-	sudo service ysfgateway status
+	service ysfgateway status
 
 YSFParrot
 
-	sudo service ysfparrot start
+	service ysfparrot start
 	
-	sudo service ysfparrot stop
+	service ysfparrot stop
 	
-	sudo service ysfparrot restart
+	service ysfparrot restart
 	
-	sudo service ysfparrot status
+	service ysfparrot status
 
 IrcDDBGateway
 
-	sudo service ircddbgatewayd start
+	service ircddbgatewayd start
 	
-	sudo service ircddbgatewayd stop
+	service ircddbgatewayd stop
 	
-	sudo service ircddbgatewayd restart
+	service ircddbgatewayd restart
 	
-	sudo service ircddbgatewady status
+	service ircddbgatewady status
 
 # Command for automatic start of service
-	sudo systemctl enable mmdvmhost.timer
-	sudo systemctl enable dmrgateway.timer
-	sudo systemctl enable ysfgateway.timer
-	sudo systemctl enable ysfparrot.timer
-	sudo systemctl enable ircddbgatewayd.timer
-	sudo systemctl enable telegrambot.timer
+	systemctl enable mmdvmhost.timer
+	systemctl enable dmrgateway.timer
+	systemctl enable ysfgateway.timer
+	systemctl enable ysfparrot.timer
+	systemctl enable ircddbgatewayd.timer
+	systemctl enable telegrambot.timer
 
 # Disable service at startup
-	sudo systemctl disable <nome_servizio>.timer
+	systemctl disable <nome_servizio>.timer
 
 # Connect to Screen Output of a service to see what is happening 
    
-   sudo screen -r MMDVMHost
+   screen -r MMDVMHost
    
    Ctrl a then d to disconnect from screen and keep the service running
 
 # Connect to Screen Output of a service to see what is happening 
    
-   sudo screen -r DMRGateway
+   screen -r DMRGateway
  
    Ctrl a then d to disconnect from screen and keep the service running
 
 
 # Starting shell programs
-Remember to stop the service
+Remember to stop the service first
 
 	MMDVMHost
-	sudo MMDVMHost /etc/mmdvmhost/MMDVM.ini
+	MMDVMHost /etc/mmdvmhost/MMDVM.ini
 	
 	DMRGateway
-	sudo DMRGateway /etc/dmrgateway/DMRGateway.ini
+	DMRGateway /etc/dmrgateway/DMRGateway.ini
 
 	YSFGateway
-	sudo DMRGateway /etc/dmrgateway/DMRGateway.ini
+	YSFGateway /etc/ysfgateway/YSFGateway.ini
 	
 	ircDBGateway
-	sudo ircddbgatewayd -logdir /var/log/ircddbgateway -confdir /etc/ircddbgateway
+	ircddbgatewayd -logdir /var/log/ircddbgateway -confdir /etc/ircddbgateway
 
 	Telegrambot
-	sudo python /home/pi/telegrambot.py
+	python /home/pi/telegrambot.py
 	
 CTRL+C to exit
 
