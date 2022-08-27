@@ -8,6 +8,8 @@ Download the package from the terminal using the command:  if you are root user 
         
 	apt-get install git
 	
+	apt-get install screen
+	
 	git clone https://github.com/g4tsn/install-mmdvm-sh.git ./install-mmdvm-sh
 	
 	cd install-mmdvm-sh
