@@ -213,7 +213,7 @@ SHIFT=$((${FREQ_RX:0:3}${FREQ_RX:4} - ${FREQ_TX:0:3}${FREQ_TX:4}))
 	printf "\n\n[POCSAG]\nEnable=0\nFrequency=439987500" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
         printf "\n\n[FM]\nEnable=0\n#Callsign=G4TSN\nExtAudioBoost=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
         printf "\n\n[D-Star Network]\nEnable=1\nGatewayAddress=127.0.0.1\nGatewayPort=20010\nLocalPort=20011\n# ModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
-	printf "\n\n[DMR Network]\nEnable=${FreeDMR_EN}\nType=Gateway\nAddress=127.0.0.1\nPort=62031\nLocal=62032\nJitter=360\nLocal=62032\nPassword=PASSWORD\n# Options=\nModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
+	printf "\n\n[DMR Network]\nEnable=${FreeDMR_EN}\nType=Gateway\nAddress=127.0.0.1\nPort=62031\nLocal=62032\nJitter=360\nPassword=PASSWORD\n# Options=\nModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[System Fusion Network]\nEnable=1\nLocalAddress=127.0.0.1\nLocalPort=3200\nGatewayAddress=127.0.0.1\nGatewayPort=4200\n# ModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[P25 Network]\nEnable=0\nGatewayAddress=127.0.0.1\nGatewayPort=42020\nLocalPort=32010\n# ModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
 	printf "\n\n[NXDN Network]\nEnable=0\nLocalAddress=127.0.0.1\nLocalPort=14021\nGatewayAddress=127.0.0.1\nGatewayPort=14020\n# ModeHang=3\nDebug=0" >>${CONFIG_PATH_MMDVMHOST}MMDVM.ini
