@@ -45,10 +45,10 @@ else
     N_CPU="0"
 fi
 
-echo "Il numero di core è $N_CPU"
+#echo "Il numero di core è $N_CPU"
 sleep 3
 
-echo 'Aggiornamento e installazione dei pachetti neccessari'
+echo 'installation the software you require'
 
 apt-get update
 
@@ -82,11 +82,11 @@ if [ $VAR = "y" ]; then
 	sh ${PATH_RUN_SCRIPT}/install/ircddbgateway.sh ${PATH_RUN_SCRIPT} ${LOG_PATH_IRCDDBGATEWAY} ${CONFIG_PATH_IRCDDBGATEWAY} ${PATH_EXEC} ${N_CPU}
 fi
 
-echo 'install  service bot telegram? (y/n)'
-read VAR
-if [ $VAR = "y" ]; then
-	sh ${PATH_RUN_SCRIPT}/install/telegrambot.sh ${PATH_RUN_SCRIPT}
-fi
+#echo 'install  service bot telegram? (y/n)'
+#read VAR
+#if [ $VAR = "y" ]; then
+#	sh ${PATH_RUN_SCRIPT}/install/telegrambot.sh ${PATH_RUN_SCRIPT}
+#fi
 
 cp -R ${PATH_RUN_SCRIPT}/script /home/pi/
 
@@ -96,20 +96,20 @@ if [ $VAR = "y" ]; then
 	sh ${PATH_RUN_SCRIPT}/install/dashboard.sh
 fi
 
-echo 'install buttonoff? (y/n)'
-read VAR
-if [ $VAR = "y" ]; then
-	sh ${PATH_RUN_SCRIPT}/install/buttonoff.sh ${PATH_FILEEXECBUTTON} ${FILE_NAME}
-fi
+#echo 'install buttonoff? (y/n)'
+#read VAR
+#if [ $VAR = "y" ]; then
+#	sh ${PATH_RUN_SCRIPT}/install/buttonoff.sh ${PATH_FILEEXECBUTTON} ${FILE_NAME}
+#fi
 
-echo 'install OpenVPN? (y/n)'
-read VAR
-if [ $VAR = "y" ]; then
-	sh ${PATH_RUN_SCRIPT}/install/openvpn.sh
-fi
+#echo 'install OpenVPN? (y/n)'
+#read VAR
+#if [ $VAR = "y" ]; then
+#	sh ${PATH_RUN_SCRIPT}/install/openvpn.sh
+#fi
 
 systemctl daemon-reload
 
-echo 'Fine istallazione, si consiglia di fare un reboot se tutto e stato eseguito corretamente '
+echo 'Instalation is completed'
 
 exit 0
