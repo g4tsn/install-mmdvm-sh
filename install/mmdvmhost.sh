@@ -48,9 +48,10 @@ N_CPU=$5
 
 	chmod -R 777 ${CONFIG_PATH_MMDVMHOST}
 	chmod -R 777 ${LOG_PATH_MMDVMHOST}
-
+        cp -R /opt/install-mmdvm-sh/install/MMDVM.ini /home/pi/MMDVM/MMDVMHost/MMDVM.ini
+	
 	nano MMDVM.ini
-
+        
 	cp -R /home/pi/MMDVM/MMDVMHost/MMDVM.ini ${CONFIG_PATH_MMDVMHOST}
 	cp -R /home/pi/MMDVM/MMDVMHost/NXDN.csv ${LOG_PATH_MMDVMHOST}
 	cp -R ${PATH_RUN_SCRIPT}/service/mmdvmhost.service /lib/systemd/system/
