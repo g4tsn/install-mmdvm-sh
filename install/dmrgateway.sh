@@ -28,8 +28,9 @@ sleep 2
 	# sed -i 's,FileLevel=1,FileLevel=0,g' ${CONFIG_PATH_DMRGATEWAY}MMDVM.ini
 	# sed -i 's,# Port=/dev/ttyACM0,Port=/dev/ttyAMA0,g' ${CONFIG_PATH_DMRGATEWAY}MMDVM.ini
 	# sed -i 's,Port=\\.\COM3,# Port=\\.\COM3,g' ${CONFIG_PATH_DMRGATEWAY}MMDVM.ini
-
-	#nano DMRGateway.ini
+        cp -R /opt/install-mmdvm-sh/install/DMRGateway.ini /home/pi/MMDVM/DMRGateway/DMRGatway.ini
+	
+	nano DMRGateway.ini
 
 	cp -R /home/pi/MMDVM/DMRGateway/DMRGateway.ini ${CONFIG_PATH_DMRGATEWAY}
 	cp -R /home/pi/MMDVM/DMRGateway/XLXHosts.txt ${LOG_PATH_DMRGATEWAY}
