@@ -2,7 +2,7 @@
 # INSTALL MMDVM Raspberry PI on Raspbian 10 (Buster)        
 
 
-Download the package from the terminal using the command:  if you are root user forget the sudo 
+Download the package from the terminal using the command:  
 
 	cd /opt
         
