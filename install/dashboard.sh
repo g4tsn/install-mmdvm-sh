@@ -3,8 +3,8 @@
 	echo 'install dashboard....'
 
 	git clone https://github.com/dg9vh/MMDVMHost-Dashboard.git /var/www/html/MMDVMHost-Dashboard
-
-        c383e537e55a22d237cfcd82641d82f35d195a32
+        cd /var/www/html/MMDVMHost-Dashboard
+        git reset --hard c383e537e55a22d237cfcd82641d82f35d195a32
 	groupadd www-data
 	usermod -G www-data -a pi
 	chown -R www-data:www-data /var/www/html
