@@ -110,6 +110,6 @@ fi
 
 systemctl daemon-reload
 
-echo 'Instalation is completed'
+echo 'Installation is completed'
 
 exit 0
