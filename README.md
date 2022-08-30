@@ -10,9 +10,7 @@ Software installing:
   * YSFParrot
 * ircDDBGateway no gui
 * DG9VH MMDVMHost-Dashboard
-* Telegram BOT
-* Button power OFF
-* OpenVPN
+
 
 Read INSTALL.md for exec the script.
 
