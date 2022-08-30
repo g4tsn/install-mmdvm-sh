@@ -2,7 +2,8 @@
 # INSTALL MMDVM Raspberry PI on Raspbian 10 (Buster)        
 
 
-Download the package from the terminal using the command:  
+Issue the following commands assuming you are logged in as root user and your pi is connnected to the internet
+
 
 	cd /opt
         
@@ -20,21 +21,22 @@ Download the package from the terminal using the command:
 	
 	you will have several options to install or not answer y/n
 	
-	the first option is for direct attached display always choose n for this option library missing 
+	the second option is for direct attached display always choose n for this option library missing 
 	
 	for dmr only installation choose y for mmdvmhost dmrgateway and dashboard 
 
-	wait for the installation to end ....
-	
-
-	
-	
+	wait for the installation to complete.
+		
 	
 	During the install nano editor will allow you to edit your config files change your callsign DMR id etc 
 	
-	once you have done the edit Ctrl X  and Y to save n  
+	once you have done the edit Ctrl X  and Y to save the build will continue  
 			
-	This copies all the config files into their correct place in /etc/mmdvmhost/MMDVM.ini     for example
+	All the config files into their correct place in /etc/mmdvmhost/MMDVM.ini  
+	
+	or /etc/dmrgateway/DMRGateway.ini 
+	
+	After intallation you can go back and further edit your config 
 
 
 
@@ -56,13 +58,13 @@ MMDVMHost
 	
 DMRGateway
 
-	service dmrgateway start
+	systemctl start dmrgateway 
 	
-	service dmrgateway stop
+	systemctl stop dmrgateway 
 	
-	service dmrgateway restart
+	systemctl restart dmrgateway 
 	
-	service dmrgateway status
+	systemctl status dmrgateway 
 
 
 YSFGateway
@@ -104,9 +106,9 @@ IrcDDBGateway
 	systemctl enable telegrambot.timer
 
 # Disable service at startup
-	systemctl disable <nome_servizio>.timer
+	systemctl disable <name of service>.timer
 
-# Connect to Screen Output of a service to see what is happening 
+# Connect to Screen Output of a service to see what is happening  
    
    screen -r MMDVMHost
    
@@ -119,8 +121,8 @@ IrcDDBGateway
    Ctrl a then d to disconnect from screen and keep the service running
 
 
-# Starting shell programs
-Remember to stop the service first
+# Starting shell programs for more detailed diagnostics 
+This is useful initially to check whats happening on startup ......Remember to stop the service first
 
 	MMDVMHost
 	MMDVMHost /etc/mmdvmhost/MMDVM.ini
