@@ -26,30 +26,14 @@ Download the package from the terminal using the command:  if you are root user 
 
 	wait for the installation to end ....
 	
-Config  This script allows you to final edit config files 
+
 	
 	
-	Make sure you are always in the same direcory /opt/install-mmdvm-sh/ and open the file using the command
 	
-	nano MMDVMConfig.sh    
+	During the install nano editor will allow you to edit your config files change your callsign DMR id etc 
 	
-	you can do this over and over to check config and edit anything you need but be sure to run the script once you edit something 
-	
-	check your config files look ok and change your callsign DMR id etc 
-	
-	once you check to the end Ctrl X will prompt you to save changes you made and open the next section  
-	
-	again check for any changes you want to make scroll to the end Ctrl X will prompt to save and the next section will open 
-	
-	if you have not configured a section because you did not install for example YSF  CTRL X at the end will take you straight to the next section
-		
-	
-	Once saved all sections,  run the script
-	
-	bash MMDVMConfig.sh
-	
-	Make sure you run above after any edit to copy the changes into place 
-	
+	once you have done the edit Ctrl X  and Y to save n  
+			
 	This copies all the config files into their correct place in /etc/mmdvmhost/MMDVM.ini     for example
 
 
@@ -62,13 +46,13 @@ Uninstall by command
 
 MMDVMHost
 
-	service mmdvmhost start
+	systemctl start mmdvmhost 
 	
-	service mmdvmhost stop
+	systemctl stop mmdvmhost 
 	
-	service mmdvmhost restart
+	systemctl restart mmdvmhost restart
 	
-	service mmdvmhost status
+	systemctl status mmdvmhost 
 	
 DMRGateway
 
@@ -149,9 +133,6 @@ Remember to stop the service first
 	
 	ircDBGateway
 	ircddbgatewayd -logdir /var/log/ircddbgateway -confdir /etc/ircddbgateway
-
-	Telegrambot
-	python /home/pi/telegrambot.py
 	
 CTRL+C to exit
 
