@@ -109,7 +109,8 @@ fi
 #fi
 
 systemctl daemon-reload
-
+systemctl start dmrgateway
+systemctl start mmdvmhost
 echo 'Installation is completed'
 
 exit 0
