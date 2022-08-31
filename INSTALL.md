@@ -6,7 +6,8 @@ Issue the following commands assuming you are logged in as root user and your pi
 
 
 	cd /opt
-        
+	
+        apt-get update
 	apt-get install git
 	
 	apt-get install screen
