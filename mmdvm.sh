@@ -68,6 +68,7 @@ echo 'install DMRGateway? (y/n)'
 read VAR
 if [ $VAR = "y" ]; then
 	sh ${PATH_RUN_SCRIPT}/install/dmrgateway.sh ${PATH_RUN_SCRIPT} ${LOG_PATH_DMRGATEWAY} ${CONFIG_PATH_DMRGATEWAY} ${PATH_EXEC} ${N_CPU}
+	cp /opt/install-mmdvm-sh/install/DMRGateway.ini /etc/dmrgateway/DMRGateway.ini
 fi
 
 echo 'install YSFClients? (y/n)'
