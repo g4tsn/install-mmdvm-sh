@@ -245,4 +245,39 @@ ircDDBGateway
 	
 	/usr/share/ircddbgateway
 
+Trouble shooting
+
+Most of the trouble starting is the OS not seeing the MMDVM modem or Hotspot  
+
+there are 2 common settings for the modem in the MMDVM.ini config file 
+
+Port=/dev/ttyACM0
+or 
+Port=/dev/ttyAMA0
+
+Only one can be set active in the /etc/mmdvmhost/MMDVM.ini
+
+to check which the modem is using type the command with the modem connected you may see both above 
+ls /dev/tty*
+you will see a list of ports look for those above 
+if you see both now unplug the modem from USB and re run cmd 
+ls /dev/tty* 
+this will show you hopefully which port is being used by the modem 
+
+set this in the Port= option in MMDVM.ini file 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
