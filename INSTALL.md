@@ -3,7 +3,9 @@
 
 First prepare SD card for PI 
 
-Download the Raspberry pi Buster 10 OS lite img
+Download the Raspberry pi Buster 10 OS lite img  
+
+https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz
 
 Write this to your SD card via SD card reader and suitable program of choice   (win32 disk imager)
 find the drive letter in windows asigned to the /boot folder on the SD card in windows mine is H:
