@@ -17,7 +17,8 @@ sleep 2
 	else
 		make -j$N_CPU all
 	fi
-        cp /opt/install-mmdvm-sh/install/DMRGateway.ini /home/pi/MMDVM/DMRGateway/DMRGatway.ini 
+        cp -R /opt/install-mmdvm-sh/install/DMRGateway.ini /home/pi/MMDVM/DMRGateway/DMRGatway.ini
+	cp -R /opt/install-mmdvm-sh/install/DMRGateway.ini /etc/dmrgateway/DMRGateway.ini
 	cp -R /home/pi/MMDVM/DMRGateway/DMRGateway ${PATH_EXEC}
 	mkdir -p ${CONFIG_PATH_DMRGATEWAY}
 	mkdir -p ${LOG_PATH_DMRGATEWAY}
@@ -30,7 +31,7 @@ sleep 2
 	# sed -i 's,Port=\\.\COM3,# Port=\\.\COM3,g' ${CONFIG_PATH_DMRGATEWAY}MMDVM.ini
         
 	
-	nano DMRGateway.ini
+	nano /etc/dmrgateway/DMRGateway.ini
 
 	cp -R /home/pi/MMDVM/DMRGateway/DMRGateway.ini ${CONFIG_PATH_DMRGATEWAY}
 	cp -R /home/pi/MMDVM/DMRGateway/XLXHosts.txt ${LOG_PATH_DMRGATEWAY}
