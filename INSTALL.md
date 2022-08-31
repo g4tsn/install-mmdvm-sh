@@ -1,6 +1,54 @@
 
 # INSTALL MMDVM Raspberry PI on Raspbian 10 (Buster)        
 
+First prepare SD card for PI 
+
+Download the Raspberry pi Buster 10 OS lite img
+
+Write this to your SD card via SD card reader and suitable program of choice   (win32 disk imager)
+find the drive letter in windows asigned to the /boot folder on the SD card in windows mine is H:
+
+open a cmd prompt in windows change to drive letter of /boot folder    H:
+
+copy con ssh
+F6  
+
+This allows the pi to accept ssh connections via putty without attaching a screen
+
+connect pi to network and insert created SD card
+
+boot up and find the IP assigned to your pi by your router 
+
+login as pi  password raspberry
+
+create password root with following command
+sudo passwd root
+
+enter password twice for root ...
+
+edit the sshd_config file with following command 
+
+sudo nano /etc/ssh/sshd_config
+
+look for following line about 20 lines down from top  
+#PermitRootLogin ????????
+edit to read
+
+PermitRootLogin yes
+
+save
+
+Ctrl X    then Y to save
+
+re boot pi 
+
+sudo reboot
+
+login again via ssh this time as root and the password you set
+
+
+Now the install part of the MMDVM software 
+
 
 Issue the following commands assuming you are logged in as root user and your pi is connnected to the internet
 
