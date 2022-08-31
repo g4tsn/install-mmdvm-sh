@@ -12,7 +12,7 @@
 	
 	apt-get install php7.3-common php7.3-cgi php
 	apt-get install sqlite3 php7.3-sqlite
-	
+	cp -R /opt/install-mmdvm-sh/install/config.php /var/www/html/MMDVMHost-Dashboard/config/config.php
 	lighty-enable-mod fastcgi
 	lighty-enable-mod fastcgi-php
 	service lighttpd force-reload
