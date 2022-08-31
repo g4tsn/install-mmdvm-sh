@@ -54,10 +54,12 @@ N_CPU=$5
         
 	cp -R /home/pi/MMDVM/MMDVMHost/MMDVM.ini ${CONFIG_PATH_MMDVMHOST}
 	cp -R /home/pi/MMDVM/MMDVMHost/NXDN.csv ${LOG_PATH_MMDVMHOST}
-	cp -R ${PATH_RUN_SCRIPT}/service/mmdvmhost.service /lib/systemd/system/
-	cp -R ${PATH_RUN_SCRIPT}/service/mmdvmhost.timer /lib/systemd/system/
+	cp -R /opt/install-mmdvm-sh/service/mmdvmhost.service /lib/systemd/system/
+	cp -R /opt/install-mmdvm-sh/service/mmdvmhost.timer /lib/systemd/system/
 	chmod 755 /lib/systemd/system/mmdvmhost.service
 	chmod 755 /lib/systemd/system/mmdvmhost.timer
+	systemctl enable mmdvmhost.service
+	systemctl enable mmdvmhost.timer
 	#servizio crontab download DMR ID
 	echo " 0 0    * * *   root    sh /home/pi/script/DMRIDUpdate.sh 1>/dev/null 2>&1" >> /etc/crontab
 
