@@ -17,6 +17,7 @@ sleep 2
 	else
 		make -j$N_CPU all
 	fi
+	mkdir /etc/dmrgateway
         cp -R /opt/install-mmdvm-sh/install/DMRGateway.ini /home/pi/MMDVM/DMRGateway/DMRGatway.ini
 	cp -R /opt/install-mmdvm-sh/install/DMRGateway.ini /etc/dmrgateway/DMRGateway.ini
 	cp -R /home/pi/MMDVM/DMRGateway/DMRGateway ${PATH_EXEC}
