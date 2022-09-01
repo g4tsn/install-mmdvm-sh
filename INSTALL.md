@@ -74,6 +74,8 @@ again reboot
 
 
 
+******Note currently only MMDVMHost and DMRGateway & Dashboard known to run and connect to the server .....this is a work in progress 1/9/2022******
+
 
 
 
@@ -180,10 +182,12 @@ IrcDDBGateway
 # Command for automatic start of service
 	systemctl enable mmdvmhost.timer
 	systemctl enable dmrgateway.timer
+	
+	
 	systemctl enable ysfgateway.timer
 	systemctl enable ysfparrot.timer
 	systemctl enable ircddbgatewayd.timer
-	systemctl enable telegrambot.timer
+	
 
 # Disable service at startup
 	systemctl disable <name of service>.timer
