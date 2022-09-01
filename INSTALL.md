@@ -49,6 +49,34 @@ sudo reboot
 login again via ssh this time as root and the password you set
 
 
+
+Some versions of the pi have BlueTooth and this can conflict with the uart port the modem uses
+
+Go the the /boot folder and edit the cmdline.txt file 
+
+Remove console=serial0,115200
+
+save 
+
+Next again in the /boot folder edit config.txt and add the following to the end of the file
+
+enable_uart=1
+dtoverlay=pi3-disable-bt
+
+reboot
+
+Login again as root and issue the following commands 
+systemctl disable serial-getty@ttyAMA0.service
+sudo systemctl disable hciuart
+
+again reboot
+
+
+
+
+
+
+
 Now the install part of the MMDVM software 
 
 
